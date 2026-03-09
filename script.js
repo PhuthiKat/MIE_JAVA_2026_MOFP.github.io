@@ -103,37 +103,40 @@ function syncNavigationLinks(activeSection) {
 function fixDarkModeScrolling() {
     if (!cloneContainer) return;
 
-    const darkSections = cloneContainer.querySelectorAll('.section');
-    darkSections.forEach(section => {
-        section.style.minHeight = '100vh';
-        section.style.height = 'auto';
-        section.style.overflow = 'visible';
-        section.style.position = 'relative';
-    });
-
-    const projectsSection = cloneContainer.querySelector('.projects');
-    const contactSection = cloneContainer.querySelector('.contact');
-    
-    if (projectsSection) {
-        projectsSection.style.paddingBottom = '80px';
-        projectsSection.style.minHeight = '100vh';
-        projectsSection.style.height = 'auto';
-        projectsSection.style.overflowY = 'visible';
-    }
-    
-    if (contactSection) {
-        contactSection.style.paddingBottom = '80px';
-        contactSection.style.minHeight = '100vh';
-        contactSection.style.height = 'auto';
-        contactSection.style.overflowY = 'visible';
-    }
-    
-    cloneContainer.style.overflowY = 'auto';
-    cloneContainer.style.height = '100%';
     cloneContainer.style.position = 'fixed';
     cloneContainer.style.top = '0';
     cloneContainer.style.left = '0';
     cloneContainer.style.width = '100%';
+    cloneContainer.style.height = '100vh';
+    cloneContainer.style.overflowY = 'auto';
+    cloneContainer.style.overflowX = 'hidden';
+    cloneContainer.style.WebkitOverflowScrolling = 'touch';
+
+    const allSections = cloneContainer.querySelectorAll('.section');
+    allSections.forEach(section => {
+        section.style.minHeight = '100vh';
+        section.style.height = 'auto';
+        section.style.overflow = 'visible';
+        section.style.position = 'relative';
+        section.style.flexShrink = '0';
+    });
+
+    const header = cloneContainer.querySelector('.header');
+    if (header) {
+        header.style.position = 'fixed';
+        header.style.top = '0';
+        header.style.left = '0';
+        header.style.width = '100%';
+        header.style.zIndex = '1000';
+        header.style.background = 'rgba(21, 32, 43, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    }
+
+    const homeSection = cloneContainer.querySelector('#home');
+    if (homeSection) {
+        homeSection.style.marginTop = '0';
+        homeSection.style.paddingTop = '80px';
+    }
 }
 
 const toggleIcons = document.querySelectorAll('.toggle-icon');
@@ -163,15 +166,13 @@ toggleIcons.forEach((toggleIcon) => {
             syncNavigationLinks('home');
         }
         
-        fixDarkModeScrolling();
+        setTimeout(fixDarkModeScrolling, 50);
         
-        document.body.style.overflow = 'hidden';
-        document.body.style.height = '100%';
-        
-        setTimeout(() => {
+        if (cloneContainer.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
             document.body.style.overflow = '';
-            document.body.style.height = '';
-        }, 100);
+        }
     });
 });
 
@@ -237,3 +238,5 @@ setTimeout(() => {
     fixDarkModeScrolling();
     fixDarkContainerDownload();
 }, 500);
+
+window.addEventListener('resize', fixDarkModeScrolling);
