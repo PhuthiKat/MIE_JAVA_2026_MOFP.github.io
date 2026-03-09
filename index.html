@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Phuthi Katleho Mofokeng Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container active" id="container">
+            <header class="header">
+                
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Dark/Light mode toggle icon -->
+                <div class="toggle-icon">
+                    <i class="bx bx-moon"></i>
+                </div>
+            </header>
+            
+            <!-- Home Section -->
+            <section id="home" class="home section">
+                <div class="home-content">
+                    <h1>Hi there, I'm <span>Phuthi Katleho Mofokeng</span></h1>                   
+                    <p>An aspiring software developer with a passion for creating innovative solutions. I specialize in web development and have experience working with various programming languages and frameworks.</p>
+                
+                    <div class="socials">
+                        <a href="https://linkedin.com/in/phuthi-mofokeng-700332305" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://github.com/PhuthiKat" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i></a>
+                        <a href="https://twitter.com/@Phuthi_KM" target="_blank" rel="noopener noreferrer"><i class="bx bxl-twitter"></i></a>
+                    </div>
+
+                    <!-- Download CV Button -->
+                    <a href="P.Mofokeng CV..pdf" download="P.Mofokeng_CV.pdf" class="btn">Download CV</a>
+                </div>
+
+                <div class="home-img">
+                    <img src="phuthi.jpg" alt="Phuthi Katleho Mofokeng">
+                </div>    
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about section" style="display: none;">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>I'm a passionate software developer with a strong focus on Java and database development. I thrive on building robust backend systems and crafting efficient data solutions that solve real-world problems.</p>
+                    
+                    <p>My technical toolkit includes Java, SQL, Python, and various database technologies, but I'm always eager to expand my skills and take on new challenges. I believe in writing clean, maintainable code that stands the test of time.</p>
+                    
+                    <p>When I'm not coding, you'll find me on the soccer field, lost in a good book, or exploring virtual worlds through video games. I find that these activities sharpen my strategic thinking and creativity – qualities that make me a better developer.</p>
+                    
+                    <div class="interests">
+                        <span><i class='bx bx-football'></i> Soccer</span>
+                        <span><i class='bx bx-joystick'></i> Gaming</span>
+                        <span><i class='bx bx-book-open'></i> Reading</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects section" style="display: none;">
+                <div class="projects-container">
+                    <h2 class="section-title">My Projects</h2>
+                    
+                    <!-- Project 1: Bus Tracking System -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="bustrackingsystem.jpg" alt="Bus Tracking System">
+                        </div>
+                        <div class="project-content">
+                            <h3>BUS TRACKING SYSTEM</h3>
+                            <p class="project-links">
+                                <a href="http://bustrackingsystem.kesug.com" target="_blank" rel="noopener noreferrer">
+                                    <i class="bx bx-link-external"></i> bustrackingsystem.kesug.com
+                                </a>
+                            </p>
+                            <p class="project-description">
+                                A mobile system developed to assist TUT students that stay on accredited residency (2KM or more away from campus) and need to catch a bus to and from campus. The system helps monitor the buses by providing details of the bus, location of the bus, details of the bus driver and the estimated time of arrival of the bus.
+                            </p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>MySQL</span>
+                                <span>JSON</span>
+                                <span>Geolocation API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2: Loan Shark Management System -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>LOAN SHARK MANAGEMENT SYSTEM</h3>
+                            <p class="project-links">
+                                <a href="https://github.com/PhuthiKat/loan-shark-management" target="_blank" rel="noopener noreferrer">
+                                    <i class="bx bxl-github"></i> Available on GitHub
+                                </a>
+                            </p>
+                            <p class="project-description">
+                                A digital platform developed to assist loan sharks in effectively managing their lending operations. The web application was developed in Java utilizing Bootstrap for web design, Thymeleaf for nice looking templates, SpringBoot Framework for the creation of robust backend operations, and Postgresql for secure storage and management of data.
+                            </p>
+                            <div class="project-tech">
+                                <span>Java</span>
+                                <span>SpringBoot</span>
+                                <span>Bootstrap</span>
+                                <span>Thymeleaf</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section" style="display: none;">
+                <div class="contact-container">
+                    <h2 class="section-title">Contact Me</h2>
+                    
+                    <div class="contact-content">
+                        <p class="contact-intro">Feel free to reach out to me through any of the channels below. I'll get back to you as soon as possible!</p>
+                        
+                        <div class="contact-info">
+                            <!-- Phone -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bx bx-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+27818166444">081 816 6444</a>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bx bxl-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>WhatsApp</h4>
+                                    <a href="https://wa.me/2781614890708">061 489 0708</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bx bx-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <a href="mailto:phuthimofokeng@gmail.com">phuthimofokeng@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links (repeated for contact section) -->
+                        <div class="contact-social">
+                            <h4>Find me on social media</h4>
+                            <div class="socials">
+                                <a href="https://linkedin.com/in/phuthi-mofokeng-700332305" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a>
+                                <a href="https://github.com/PhuthiKat" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i></a>
+                                <a href="https://twitter.com/@Phuthi_KM" target="_blank" rel="noopener noreferrer"><i class="bx bxl-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Dark mode container will be cloned by JavaScript -->
+        
+        <script src="script.js"></script>
+    </body>
+</html>
