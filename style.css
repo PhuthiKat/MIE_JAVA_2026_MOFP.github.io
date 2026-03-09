@@ -8,11 +8,18 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 .container {
     background: #f0f3fd;
     position: relative;
     color: #333;
     min-height: 100vh;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .header {
@@ -28,7 +35,6 @@
     z-index: 1000;
 }
 
-/* Logo styling - removed since we don't have a logo in this version */
 .logo {
     display: none;
 }
@@ -49,7 +55,6 @@
     padding-bottom: 5px;
 }
 
-/* Underline effect on hover */
 .navbar a::after {
     content: '';
     position: absolute;
@@ -94,13 +99,14 @@
     opacity: 0.5;
 }
 
-/* Section styling */
 .section {
     min-height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 80px 10% 0;
+    overflow: visible;
 }
 
 .home {
@@ -225,10 +231,9 @@
     transform: scale(1.02);
 }
 
-/* ==================== ABOUT SECTION STYLES ==================== */
-
 .about {
     min-height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,12 +354,12 @@
     transition: all 0.3s ease;
 }
 
-/* ==================== PROJECTS SECTION STYLES ==================== */
-
 .projects {
     min-height: 100vh;
+    height: auto;
     padding: 100px 10%;
     background: #f0f3fd;
+    overflow: visible;
 }
 
 .projects-container {
@@ -463,6 +468,12 @@
     font-size: 20px;
 }
 
+.separator {
+    color: #0066cc;
+    margin: 0 10px;
+    opacity: 0.5;
+}
+
 .project-description {
     font-size: 16px;
     line-height: 1.8;
@@ -493,12 +504,12 @@
     transform: translateY(-2px);
 }
 
-/* ==================== CONTACT SECTION STYLES ==================== */
-
 .contact {
     min-height: 100vh;
+    height: auto;
     padding: 100px 10%;
     background: #f0f3fd;
+    overflow: visible;
 }
 
 .contact-container {
@@ -602,18 +613,18 @@
     margin: 0;
 }
 
-/* ==================== DARK MODE CONTAINER ==================== */
-
 #dark-container {
     background: #15202b;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     min-height: 100vh;
     color: #f0f3fd;
     z-index: -1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 #dark-container .navbar a {
@@ -669,7 +680,6 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Dark mode styles for about section */
 #dark-container .about {
     background: #15202b;
 }
@@ -717,7 +727,6 @@
     color: #66aaff;
 }
 
-/* Dark mode styles for projects and contact */
 #dark-container .projects,
 #dark-container .contact {
     background: #15202b;
@@ -792,8 +801,6 @@
     color: #66aaff;
 }
 
-/* ==================== CLIP-PATH ANIMATIONS ==================== */
-
 #container,
 #dark-container {
     clip-path: circle(0% at 0 0);
@@ -807,8 +814,6 @@
     clip-path: circle(150% at 0 0);
     transition-delay: 0s;
 }
-
-/* ==================== MOBILE RESPONSIVE STYLES ==================== */
 
 @media (max-width: 968px) {
     .home {
@@ -897,7 +902,6 @@
         font-size: 24px;
     }
 
-    /* Responsive styles for about section */
     .about-content {
         padding: 30px 20px;
     }
